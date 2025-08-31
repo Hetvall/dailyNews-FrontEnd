@@ -1,0 +1,19 @@
+@if (categoriesResource.error()) {
+<h1>Error</h1>
+}
+
+@if (categoriesResource.isLoading()) {
+<div class="text-center my-5">
+  <loader />
+</div>
+}
+
+@if(categoriesResource.value()) {
+<div>
+  <ul>
+    @for (content of categoriesResource.value()?.articles; track content) {
+    <news-card [content]="content" />
+    }
+  </ul>
+</div>
+}

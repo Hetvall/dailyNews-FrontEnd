@@ -1,0 +1,37 @@
+<div>
+  <div class="title-container">
+    <h1 class="title" [routerLink]="['/']">
+      Daily News
+      <hr>
+    </h1>
+  </div>
+
+  <div class="form-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <h1 class="form-title">Log In or Create an account</h1>
+      <div class="mb-3">
+        <label for="inputEmail1" class="form-label">Email address</label>
+        <input formControlName="email" type="email" class="form-control" placeholder="john-doe@example.com">
+        <legend class="form-text">We'll never share your email with anyone else.</legend>
+      </div>
+      <div class="mb-3">
+        <label for="inputPassword1" class="form-label">Password</label>
+        <input formControlName="password" type="password" class="form-control" placeholder="********">
+      </div>
+
+      @if (hasError()) {
+      <div class="alert alert-danger mt-3">
+        <p>Please check the information submitted</p>
+      </div>
+      }
+
+      <button type="submit" class="btn btn-outline-primary">Log In</button>
+      <label class="create-account-label" for="create-account">Don't have an account?
+        <a (click)="createAccountClick()" class="create-account-link">
+          Create one
+        </a>
+      </label>
+    </form>
+  </div>
+
+</div>

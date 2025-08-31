@@ -1,0 +1,39 @@
+<nav class="navbar bg-body-transparent">
+  <div class="container-fluid">
+
+    <p>{{ date$ | async | date: 'fullDate'}} <br>
+      {{ date$ | async | date: 'HH:mm:ss' }}</p>
+    <a class="navbar-brand" href="#">
+      Daily News
+    </a>
+
+    <div class="buttons-container">
+      @if (authService.authStatus() === 'authenticated') {
+      <button type="button" class="btn btn-outline-primary">
+        {{authService.user()?.name}}
+      </button>
+      <button (click)="authService.logout()" type="button" class="btn btn-outline-danger">
+        Log Out
+      </button>
+      }
+      <!-- ================================== -->
+      @else if (authService.authStatus() === 'not-authenticated') {
+      @if(isLoading()) {
+      <button class="btn btn-outline-dark" type="button" disabled>
+        <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+        <span class="visually-hidden" role="status">Loading...</span>
+      </button>
+      } @else {
+      <button (click)="loginClick()" type="button" class="btn btn-outline-dark">
+        Log in
+      </button>
+      }
+      }
+      <!-- ================================== -->
+      @else {
+      <button>...</button>
+      }
+    </div>
+  </div>
+</nav>
+<hr>

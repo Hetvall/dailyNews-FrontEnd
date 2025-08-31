@@ -1,0 +1,47 @@
+<div>
+  <div class="title-container">
+    <h1 class="title" [routerLink]="['/']">
+      Daily News
+      <hr>
+    </h1>
+  </div>
+
+  <div class="form-container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <h1>Create an account</h1>
+      <div class="mb-3">
+        <label for="inputName1" class="form-label">Name</label>
+        <input formControlName="name" id="inputName1" type="text" class="form-control" placeholder="John Doe">
+      </div>
+      <div class="mb-3">
+        <label for="inputEmail1" class="form-label">Email address</label>
+        <input formControlName="email" id="inputEmail1" type="email" class="form-control"
+          placeholder="john-doe@example.com">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="inputPassword1" class="form-label">Password</label>
+        <input formControlName="password" id="inputPassword1" type="password" class="form-control"
+          placeholder="********">
+      </div>
+
+      @if (hasError()) {
+      <div class="alert alert-danger mt-3">
+        <p>Please check the information submitted</p>
+      </div>
+      }
+      @if (registerOk()) {
+      <div class="alert alert-success mt-3">
+        <p>User Registered successfully!</p>
+      </div>
+      }
+      @if(emailExists()) {
+      <div class="alert alert-danger mt-3">
+        <p>Email already in use</p>
+      </div>
+      }
+
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+  </div>
+</div>

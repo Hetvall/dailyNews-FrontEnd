@@ -1,0 +1,8 @@
+<ul class="nav nav-tabs">
+  @for (category of categories; track category) {
+  <li class="nav-item">
+    <a [routerLink]="['/dashboard', category]" routerLinkActive="text-primary" class="nav-link active"
+      aria-current="page" href="#">{{ category | titlecase }}</a>
+  </li>
+  }
+</ul>
