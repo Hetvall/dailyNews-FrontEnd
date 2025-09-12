@@ -1,0 +1,27 @@
+@if (newsResource.isLoading()) {
+<div class="text-center my-5">
+  <loader />
+</div>
+}
+
+@if (newsResource.hasValue()) {
+<div class="d-flex justify-content-center text-center m-5">
+  <fade-scroll>
+    <div>
+      <h1>{{ newsResource.value().title }}</h1>
+      <img [src]="newsResource.value().urlToImage" alt="news-image" class="news-image">
+      <p>{{ newsResource.value().content }}</p>
+      <p>{{ newsResource.value().description }}</p>
+      <small>Published at:
+        <b> {{ newsResource.value().publishedAt | date }} </b> by:
+        <b>{{ newsResource.value().author }}</b>
+      </small>
+      <h6 class="mt-5">Source:
+        <a href="{{ newsResource.value().url }}" target="_blank">
+          {{ newsResource.value().source.name }}
+        </a>
+      </h6>
+    </div>
+  </fade-scroll>
+</div>
+}

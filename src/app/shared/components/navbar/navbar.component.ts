@@ -36,4 +36,13 @@ export class NavbarComponent {
       this.router.navigate(['/auth/login']);
     }, 2000);
   }
+
+  logOutClick(): void {
+    this.isLoading.set(true);
+
+    setTimeout(() => {
+      this.isLoading.set(false);
+      this.authService.logout();
+    }, 2000);
+  }
 }

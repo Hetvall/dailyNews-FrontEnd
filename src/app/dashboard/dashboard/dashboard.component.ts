@@ -1,9 +1,9 @@
-import { DashboardService } from './../service/dashboard.service';
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { DashboardService } from './../service/dashboard.service';
 import { Article } from '../interfaces/dashboard.interface';
-import { NewsCardComponent } from '../../shared/components/news-card/news-card.component';
+import { NewsCardComponent } from '../components/news-card/news-card.component';
 
 @Component({
   selector: 'app-dashboard',

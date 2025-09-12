@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs d-none d-lg-flex">
   @for (category of categories; track category) {
   <li class="nav-item">
     <a [routerLink]="['/dashboard', category]" routerLinkActive="text-primary" class="nav-link active"
@@ -6,3 +6,22 @@
   </li>
   }
 </ul>
+
+<div class="d-flex d-lg-none mx-3">
+  <div class="btn-group ms-auto">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true"
+      aria-expanded="false">
+      Categories
+    </button>
+    <ul class="dropdown-menu">
+      @for (category of categories; track category) {
+      <li>
+        <a [routerLink]="['/dashboard', category]" routerLinkActive="text-primary" aria-current="page" href="#"
+          class="dropdown-item">
+          {{ category | titlecase }}
+        </a>
+      </li>
+      }
+    </ul>
+  </div>
+</div>

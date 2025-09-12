@@ -6,7 +6,7 @@ import { delay, map } from 'rxjs';
 
 import { NewsByCategoryService } from '../../service/newsByCategory.service';
 import { LoaderComponent } from '../../../shared/components/loader/loader.component';
-import { NewsCardComponent } from '../../../shared/components/news-card/news-card.component';
+import { NewsCardComponent } from '../news-card/news-card.component';
 
 @Component({
   selector: 'news-by-category',

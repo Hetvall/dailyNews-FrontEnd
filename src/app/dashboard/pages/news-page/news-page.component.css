@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+h1 {
+  font-family: serif;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.news-image {
+  border-radius: 40px;
+  height: auto;
+  margin-bottom: 35px;
+  mask-image: linear-gradient(black 90%, transparent);
+  padding: 20px;
+  transition: transform 0.5s ease-in-out;
+  width: 40%;
+}
+
+img:hover {
+  transform: scale(1.05);
+}

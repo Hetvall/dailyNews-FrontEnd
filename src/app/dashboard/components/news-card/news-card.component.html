@@ -1,19 +1,19 @@
 <li class="news-container">
   <div class="news-info">
     <fade-scroll>
-      <small>{{content.publishedAt | date}}</small> <br>
       <small>
-        <a [href]="content.url">
+        <a [href]="content.url" target="_blank">
           {{content.source.name}}
         </a>
 
       </small>
-      <h1>{{content.title}}</h1>
+      <h1 [routerLink]="['/dashboard/article', content.url | base64Encode]">
+        {{content.title}}
+      </h1>
       <h5>{{content.description}}</h5>
       <p>{{content.content}}
         <a [href]="content.url" target="_blank">Read more</a>
       </p>
-
       <hr>
       <hr class="news-divider">
     </fade-scroll>

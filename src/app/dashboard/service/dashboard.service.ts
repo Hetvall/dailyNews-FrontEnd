@@ -1,8 +1,10 @@
 import { inject, Injectable } from '@angular/core';
-import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { Observable, tap } from 'rxjs';
+
+import { NewsPageService } from './newsPage.service';
 import { DashboardInterface } from '../interfaces/dashboard.interface';
-import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 const apiUrl = 'https://newsapi.org/v2/everything';
 
@@ -11,7 +13,7 @@ const apiUrl = 'https://newsapi.org/v2/everything';
 })
 export class DashboardService {
   private http = inject(HttpClient);
-  constructor() {}
+  private newsPageService = inject(NewsPageService);
 
   getNews(): Observable<DashboardInterface> {
     const params = {
@@ -20,6 +22,8 @@ export class DashboardService {
       apiKey: environment.news_apiKey,
       pageSize: '11',
     };
-    return this.http.get<DashboardInterface>(apiUrl, { params });
+    return this.http
+      .get<DashboardInterface>(apiUrl, { params })
+      .pipe(tap((data) => this.newsPageService.setArticles(data.articles)));
   }
 }

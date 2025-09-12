@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
 
-import { catchError, delay, map, Observable, of, tap } from 'rxjs';
+import { catchError, map, Observable, of } from 'rxjs';
 
 import { AuthResponse } from '../interfaces/auth-response.interface';
 import { User } from '../interfaces/user.interface';

@@ -2,15 +2,15 @@
   display: block;
 }
 
-ul {
+ul.nav.nav-tabs {
   display: flex;
   justify-content: center;
   margin: 0 20%;
 }
 
 a {
-  font-family: serif;
-  font-style: oblique;
   color: black;
+  font-family: serif;
   font-size: 1rem;
+  font-style: oblique;
 }

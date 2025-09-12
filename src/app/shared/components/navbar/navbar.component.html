@@ -1,7 +1,7 @@
 <nav class="navbar bg-body-transparent">
   <div class="container-fluid">
 
-    <p>{{ date$ | async | date: 'fullDate'}} <br>
+    <p class="d-none d-lg-block">{{ date$ | async | date: 'fullDate'}} <br>
       {{ date$ | async | date: 'HH:mm:ss' }}</p>
     <a class="navbar-brand" href="#">
       Daily News
@@ -12,9 +12,16 @@
       <button type="button" class="btn btn-outline-primary">
         {{authService.user()?.name}}
       </button>
-      <button (click)="authService.logout()" type="button" class="btn btn-outline-danger">
+      @if(isLoading()) {
+      <button class="btn btn-outline-danger" type="button" disabled>
+        <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+        <span class="visually-hidden" role="status">Loading...</span>
+      </button>
+      } @else {
+      <button (click)="logOutClick()" type="button" class="btn btn-outline-danger">
         Log Out
       </button>
+      }
       }
       <!-- ================================== -->
       @else if (authService.authStatus() === 'not-authenticated') {
