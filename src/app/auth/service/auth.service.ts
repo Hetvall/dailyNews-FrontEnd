@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
+import { environment } from '../../environments/environment';
 
 import { catchError, map, Observable, of } from 'rxjs';
 
@@ -13,7 +14,8 @@ type AuthStatus = 'checking' | 'authenticated' | 'not-authenticated';
   providedIn: 'root',
 })
 export class AuthService {
-  private url: string = 'http://localhost:8080/auth';
+  // private url: string = 'http://localhost:8080/auth';
+  private url: string = `${environment.apiUrl}/auth`;
   private http = inject(HttpClient);
 
   private _authStatus = signal<AuthStatus>('checking');
