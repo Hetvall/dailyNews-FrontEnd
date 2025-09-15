@@ -3,8 +3,8 @@ import { inject, Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 
 import { DashboardInterface } from '../interfaces/dashboard.interface';
-import { environment } from '../../environments/environment';
 import { NewsPageService } from './newsPage.service';
+import { environment } from '../../../environments/environment';
 
 const apiUrl = 'https://newsapi.org/v2/top-headlines';
 
