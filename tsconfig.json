@@ -14,9 +14,9 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "preserve",
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "paths": {
-      "@env/*": ["environments/*"]
+      "src/*": ["*"]
     }
   },
   "angularCompilerOptions": {
