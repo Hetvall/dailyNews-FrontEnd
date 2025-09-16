@@ -6,7 +6,7 @@ import { catchError, map, Observable, of } from 'rxjs';
 
 import { AuthResponse } from '../interfaces/auth-response.interface';
 import { User } from '../interfaces/user.interface';
-import { environment } from 'src/environments/environment';
+import { environment } from 'environments/environment';
 
 type AuthStatus = 'checking' | 'authenticated' | 'not-authenticated';
 
