@@ -4,7 +4,7 @@ import { Observable, tap } from 'rxjs';
 
 import { NewsPageService } from './newsPage.service';
 import { DashboardInterface } from '../interfaces/dashboard.interface';
-import { environment } from '../../../environments/environment';
+import { environment } from '@environments/environment';
 
 const apiUrl = 'https://newsapi.org/v2/everything';
 
