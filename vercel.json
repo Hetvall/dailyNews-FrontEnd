@@ -1,5 +1,3 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist/daily-news-frontend",
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
