@@ -1,5 +1,3 @@
 {
-  "version": 2,
-  "builds": [{ "src": "dist/daily-news-frontend/**", "use": "@vercel/static" }],
-  "routes": [{ "src": "/(.*)", "dest": "dist/daily-news-frontend/index.html" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
