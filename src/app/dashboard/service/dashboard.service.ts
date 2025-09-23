@@ -4,7 +4,6 @@ import { Observable, tap } from 'rxjs';
 
 import { NewsPageService } from './newsPage.service';
 import { DashboardInterface } from '../interfaces/dashboard.interface';
-import { environment } from '../../../environments/environment';
 
 const apiUrl = 'https://dailynews-71ep.onrender.com/api/news';
 
