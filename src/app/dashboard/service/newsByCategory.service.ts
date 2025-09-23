@@ -6,7 +6,7 @@ import { DashboardInterface } from '../interfaces/dashboard.interface';
 import { NewsPageService } from './newsPage.service';
 import { environment } from '../../../environments/environment';
 
-const apiUrl = 'https://newsapi.org/v2/top-headlines';
+const apiUrl = 'https://dailynews-71ep.onrender.com/api/news';
 
 @Injectable({ providedIn: 'root' })
 export class NewsByCategoryService {
@@ -14,13 +14,8 @@ export class NewsByCategoryService {
   private newsPageService = inject(NewsPageService);
 
   getNewsByCategory(category: string): Observable<DashboardInterface> {
-    const params = {
-      category: category,
-      apiKey: environment.news_apiKey,
-      pageSize: 10,
-    };
     return this.http
-      .get<DashboardInterface>(apiUrl, { params })
+      .get<DashboardInterface>(`${apiUrl}/${category}`)
       .pipe(tap((data) => this.newsPageService.setArticles(data.articles)));
   }
 }
