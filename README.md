@@ -19,6 +19,10 @@ A modern web application for managing and displaying daily news, built with Angu
 - **RxJS 7.8.0** - Reactive programming
 - **Angular CLI 20.1.0** - Development tools
 
+- ## 🌐 Live Demo
+- Frontend: [Daily News on Netlify](https://dailynewsrt.netlify.app/)
+- Backend API: [Daily News API on Render](https://dailynews-71ep.onrender.com)
+
 ## 📋 Prerequisites
 
 Before you begin, ensure you have installed:
