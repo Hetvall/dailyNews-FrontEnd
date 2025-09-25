@@ -240,7 +240,7 @@ If you find any bugs, please:
    - Screenshots if necessary
    - Environment information (browser, OS, etc.)
 
-## ## 📄 License
+## 📄 License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
