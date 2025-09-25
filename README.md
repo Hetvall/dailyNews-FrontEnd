@@ -1,4 +1,4 @@
-# 📰 Daily News Full stack applicaction
+# 📰 Daily News Full stack Applicaction
 
 A modern web application for managing and displaying daily news, built with Angular 20 and Bootstrap 5.
 
@@ -186,16 +186,6 @@ You can create different build configurations in `angular.json`:
     ]
   }
 }
-```
-
-### Deploy to Vercel
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel --prod
 ```
 
 ### Deploy to Netlify
